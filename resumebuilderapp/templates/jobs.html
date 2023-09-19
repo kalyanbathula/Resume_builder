@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>jobs</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+  </head>
+  <body>
+       <div class="jobs">
+        <h1> JOB OPPORTUNITIES</h1>
+        <p class="welcome-text" style="position: absolute; top:0%; left:90%; font-size: 30px">{{username}}</p> 
+        <div class="job">
+          <img class="ai" src="https://img.freepik.com/free-vector/futuristic-ai-technology-template-vector-disruptive-technology-blog-banner_53876-117833.jpg?w=1060&t=st=1674981193~exp=1674981793~hmac=f93099aa911855ac38f7bc7fd7131453295b5ff2d909efbd1b560f9a34f49a7a" alt="">
+          <h3> <a href="{% url 'JAI' %}">AI ENGINEER</a></h3>
+          <p>Responsible for designing, developing, and deploying  AI and machine learning (ML) systems.</p>
+          </div>
+        <div class="job">
+          <img class="cloud" src="https://img.freepik.com/free-vector/memory-storage-concept-illustration_114360-2942.jpg?size=338&ext=jpg&ga=GA1.1.556430153.1672938808&semt=sph" alt="">
+          <h3><a href="{% url 'JCA' %}">CLOUD ARCHITECT</a></h3>
+          <p >designs, builds, and manages an organization's cloud computing infrastructure.</p>
+        </div>
+        <div class="job">
+          <img class="cyber" src="https://img.freepik.com/free-vector/cyber-security-isometric-illustration-with-computer-character-hacker_1284-63711.jpg?size=338&ext=jpg&ga=GA1.2.556430153.1672938808&semt=ais" alt="">
+          <h3> <a href="{% url 'JCSE' %}">CYBER SECURITY ENGINEER</a></h3>
+          <p >Responsible for designing, implementing and maintaining security systems and protocols to protect an organization's network and data from cyber threats.</p>
+        </div>
+        <div class="job">
+          <img class="dataana" src="https://img.freepik.com/free-vector/sentiment-analysis-concept-illustration_114360-5182.jpg?w=740&t=st=1674985302~exp=1674985902~hmac=e63964af417ecf3103259201513df2fd7622ab776428fa6cc51d32bf88a79539" alt="">
+          <h3> <a href="{% url 'JDALST' %}">DATA ANALYST</a></h3>
+          <p >Responsible for analyzing and interpreting complex data sets in order to identify trends, patterns, and insights that can be used to inform business decisions.</p>
+        </div>
+        <div class="job">
+          <img class="dataarch" src="https://img.freepik.com/free-vector/data-points-concept-illustration_114360-2194.jpg?size=338&ext=jpg&ga=GA1.1.556430153.1672938808&semt=sph" alt="">
+          <h3><a href="{% url 'JDART' %}">DATA ARCHITECT</a></h3>
+          <p >Responsible for designing and managing an organization's data architecture.</p>
+        </div>
+        <div class="job">
+          <img class="database" src="https://img.freepik.com/free-vector/server-status-concept-illustration_114360-1106.jpg?size=338&ext=jpg&ga=GA1.1.556430153.1672938808&semt=sph" alt="">
+          <h3><a href="{% url 'JDBA' %}">DATABASE ADMINISTRATOR</a></h3>
+          <p >Responsible for designing, implementing, and maintaining an organization's database systems.</p>
+        </div>
+        <div class="job">
+          <img class="datasci" src="https://img.freepik.com/free-vector/data-extraction-concept-illustration_114360-4876.jpg?size=338&ext=jpg&ga=GA1.2.556430153.1672938808&semt=sph" alt="">
+          <h3><a href="{% url 'JDS' %}">DATA SCIENTIST</a></h3>
+          <p >Uses scientific methods, processes, algorithms and systems to extract insights and knowledge from structured and unstructured data.</p>
+        </div>
+        <div class="job">
+          <img class="inform" src="https://img.freepik.com/free-vector/iot-development-illustration_335657-4712.jpg?size=338&ext=jpg&ga=GA1.2.556430153.1672938808&semt=ais" alt="">
+          <h3><a href="{% url 'JISA' %}">INFORMATION SECURITY ANALYST</a></h3>
+          <p >Responsible for protecting an organization's computer systems and networks from cyber threats and attacks.</p>
+        </div>
+        <div class="job">
+          <img class="network" src="https://img.freepik.com/free-vector/data-network-illustration_24908-57809.jpg?size=338&ext=jpg&ga=GA1.1.556430153.1672938808&semt=ais" alt="">
+          <h3><a href="{% url 'JNSA' %}">NETWORK SECURITY ADMINISTRATOR</a></h3>
+          <p >Responsible for maintaining and troubleshooting an organization's computer network.</p>
+        </div>
+        <div class="job">
+          <img class="softdev" src="https://img.freepik.com/free-vector/colourful-illustration-programmer-working_23-2148281410.jpg?size=338&ext=jpg&ga=GA1.2.556430153.1672938808&semt=sph" alt="">
+          <h3><a href="{% url 'JSD' %}">SOFTWARE DEVELOPER</a></h3>
+          <p > designs, develops, and maintains software applications. They work on a wide range of software projects, including desktop applications, mobile apps, web applications, and more.</p>
+        </div>
+      </div>
+
+</html>

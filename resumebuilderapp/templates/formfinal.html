@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/form-style.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Document</title>
+  </head>
+  <body>
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+
+    <!--   main-container form start -->
+    <div id="form">
+      <div
+        id="main-container"
+        style="
+          background: linear-gradient(
+            rgb(231, 238, 250) 50%,
+            rgb(255, 255, 255) 100%
+          );
+          font-family: Roboto Slab, serif;
+        "
+      >
+        <!-- form head start -->
+        <div class="head1">
+          <h1 style="padding-top: 5px">Resume Builder</h1>
+          <img src="{% static 'images/cv.png' %}" alt="" />
+        </div>
+        <!-- form head end -->
+
+        <!-- container of form start -->
+        <div class="container" id="cv-form">
+          <div class="personal-info">
+            <!-- personal-info block start -->
+            <h3>Personal Information</h3>
+            <hr style="margin: 0" />
+            <label style="font-family: Lato, sans-serif; font-size: larger"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="userName"
+              class="width-312px"
+              placeholder=" Enter Name"
+            />
+            <label style="font-family: Lato, sans-serif; font-size: larger"
+              >Phone Number</label
+            >
+            <input
+              type="text"
+              id="userNum"
+              class="width-312px"
+              placeholder=" Enter Number"
+            />
+            <label style="font-family: Lato, sans-serif; font-size: larger"
+              >Address</label
+            >
+            <textarea
+              rows="3"
+              id="userAdd"
+              type="text"
+              placeholder=" Enter Address"
+              style="font-family: Lato, sans-serif; font-size: larger"
+            ></textarea>
+            <label style="font-family: Lato, sans-serif; font-size: larger"
+              >LinkedIn</label
+            >
+            <input
+              type="text"
+              id="userLinked"
+              class="width-312px"
+              placeholder=" Enter LinkedIn Id"
+            />
+
+            <label style="font-family: Lato, sans-serif; font-size: larger"
+              >Email</label
+            >
+
+            <input
+              type="email"
+              class="width-312px"
+              id="userMail"
+              placeholder=" Enter Email"
+            />
+
+            <div id="Skill">
+              <label style="font-family: Lato, sans-serif; font-size: larger"
+                >Skills</label
+              >
+              <textarea
+                class="userSkills"
+                rows="2"
+                type="text"
+                placeholder=" Enter Skill"
+                style="font-family: Lato, sans-serif; font-size: larger"
+              ></textarea>
+              <br />
+            </div>
+
+            <div class="skillBtn">
+              <button
+                type="button"
+                class="btn btn-info"
+                onclick="addNewSkill()"
+                style="font-family: sans-serif"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+          <!-- personal-info block end -->
+
+          <!-- professional-info block start -->
+          <div class="professional-info">
+            <h3>Professional Information</h3>
+            <hr style="margin: 0" />
+            <label style="font-family: Lato, sans-serif; font-size: larger"
+              >Objective</label
+            >
+            <textarea
+              id="userObj1"
+              rows="3"
+              type="text"
+              placeholder=" Enter Your Objective"
+              style="font-family: Lato, sans-serif; font-size: larger"
+            ></textarea>
+
+            <!--  Work Experience block start -->
+            <div id="we">
+              <label style="font-family: Lato, sans-serif; font-size: larger"
+                >Work Experience</label
+              >
+              <textarea
+                rows="2"
+                class="weText"
+                type="text"
+                placeholder=" Enter Work Experience"
+                style="font-family: Lato, sans-serif; font-size: larger"
+              ></textarea>
+              <br />
+            </div>
+            <!--  Work Experience block end-->
+            <div class="weBtn">
+              <button
+                type="button"
+                style="font-family: sans-serif"
+                class="btn btn-info"
+                onclick="addNewWE()"
+              >
+                Add
+              </button>
+            </div>
+            <!--  Acadmic Qualification block start -->
+            <div id="aq">
+              <label style="font-family: Lato, sans-serif; font-size: larger"
+                >Acadmic Qualification</label
+              >
+              <textarea
+                rows="2"
+                type="text"
+                class="aqText"
+                placeholder=" Enter Acadmic Qualification"
+                style="font-family: Lato, sans-serif; font-size: larger"
+              ></textarea>
+              <br />
+            </div>
+            <!--  Acadmic Qualification block end -->
+
+            <div class="aqBtn">
+              <button
+                type="button"
+                style="font-family: sans-serif"
+                class="btn btn-info"
+                onclick="addNewAQ()"
+              >
+                Add
+              </button>
+            </div>
+
+            <div id="lang">
+              <label style="font-family: Lato, sans-serif; font-size: larger"
+                >Languages</label
+              >
+              <textarea
+                rows="2"
+                type="text"
+                class="langText"
+                placeholder=" Enter languages"
+                style="font-family: Lato, sans-serif; font-size: larger"
+              ></textarea>
+              <br />
+            </div>
+
+            <div class="langBtn">
+              <button
+                type="button"
+                style="font-family: sans-serif"
+                class="btn btn-info"
+                onclick="addNewlang()"
+              >
+                Add
+              </button>
+            </div>
+
+            <div id="certi">
+              <label style="font-family: Lato, sans-serif; font-size: larger"
+                >Certificates</label
+              >
+              <textarea
+                rows="2"
+                type="text"
+                class="certiText"
+                placeholder=" Enter Certificates "
+                style="font-family: Lato, sans-serif; font-size: larger"
+              ></textarea>
+              <br />
+            </div>
+
+            <div class="certiBtn">
+              <button
+                type="button"
+                class="btn btn-info"
+                onclick="addNewcerti()"
+                style="font-family: sans-serif"
+              >
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- container of form end -->
+
+      <div class="end">
+        <button onclick="saveFunction()" class="btn btn-success">
+          Create Resume
+        </button>
+      </div>
+
+      <!-- <div class="last-btn">
+        <button class="btn btn-success" onclick="myFunction()">
+          dark mode
+        </button> -->
+    </div>
+
+    <!--   main-container form end -->
+
+    <!-- professional-info block end -->
+
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+
+    <div id="main-template" style="border: 2px solid">
+      <div id="mini-temp">
+        <div class="head">
+          <div class="left-head">
+            <h1 id="userName2">Suyog Kalyan Nagawade</h1>
+            <p id="userObj2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+              pariatur veritatis, natus obcaecati nobis earum dolorum hic
+              praesentium nostrum vitae omnis id doloremque libero quam dolores
+              magni corrupti. Perferendis, culpa? Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Accusamus delectus placeat maxime
+              vero tempore a minus. Ducimus praesentium facilis iste ipsa
+              maiores ratione a ipsum eum doloremque, minus hic eius.
+            </p>
+          </div>
+        </div>
+        <div id="colorClass2" class="personal-data colorClass">
+          <div class="left-personal-data">
+            <div class="email-data">
+              <img src="{% static 'images/gmail.png' %}" alt="" />
+
+              <a id="userMail2" href=""></a>
+            </div>
+
+            <div class="addressData">
+              <img src="{% static 'images/location.png' %}" alt="" />
+              <a id="userAdd2" href=""></a>
+            </div>
+          </div>
+          <div class="right-personal-data">
+            <div class="mob-number">
+              <img src="{% static 'images/phone-call.png' %}" alt="" />
+              <a id="userNum2" href=""></a>
+            </div>
+
+            <div class="linkedIn">
+              <img src="{% static 'images/linkedin.png' %}" alt="" />
+              <a id="userLinked2" href=""></a>
+            </div>
+          </div>
+        </div>
+        <div class="education-all">
+          <div class="left-side-data">
+            <div class="education">
+              <h2 id="colorClass3" class="colorClass">EDUCATION</h2>
+              <div class="card-body">
+                <ul id="userAq2">
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="personal-proj">
+              <h2 id="colorClass4" class="colorClass">WORK EXPERIENCE</h2>
+              <div class="card-body">
+                <ul id="userWork2">
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="lang">
+              <h2 id="colorClass5" class="colorClass">Languages</h2>
+              <div class="card-body">
+                <ul id="langText2">
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="right-side-data">
+            <div class="tech-skill">
+              <h2 id="colorClass6" class="colorClass">TECHNICAL SKILLS</h2>
+              <div class="SkillBody">
+                <ul id="userSkill2">
+                  <li>java</li>
+                  <li>html</li>
+                  <li>javaScript</li>
+                </ul>
+              </div>
+            </div>
+            <div class="certification">
+              <h2 id="colorClass7" class="colorClass">CERTIFICATES</h2>
+              <div class="card-body">
+                <ul id="certiText2">
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                  <li>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Necessitatibus, dignissimos.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="max-temp">
+        <div class="printBtn mt-3 text-center">
+          <button onclick="printCv()" class="btn btn-success">
+            Print Resume
+          </button>
+          <button class="btn btn-success" onclick="backForm()">Back</button>
+          <button
+            class="btn"
+            style="background-color: rgb(226, 135, 135)"
+            id="redFun"
+          >
+            Red
+          </button>
+          <button
+            class="btn"
+            style="background-color: rgb(140, 140, 220)"
+            id="blueFun"
+          >
+            Blue
+          </button>
+          <button
+            class="btn"
+            style="background-color: rgb(202, 229, 119)"
+            id="yellowFun"
+          >
+            Yellow
+          </button>
+          <button
+            class="btn"
+            style="background-color: rgb(106, 200, 106)"
+            id="greenFun"
+          >
+            green
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="{% static 'js/script2.js' %}"></script>
+  </body>
+</html>

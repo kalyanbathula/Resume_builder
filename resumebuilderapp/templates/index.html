@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME BUILDER</title>
+    <link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAA
+    AAAAAAAEAAAAAAAAAD9/f0AAAAAAP///wD4+PgA8ionAAQEBABLS0sANjY2AIWBfQD+/v4AAQEBAOOTkQBDQ0MAFRUVADw8PAAAAAA
+    ArX7MzMzKERGpmZmZmZoREamqqqqZmhERqZmZmUSaERGpmZmZlEQREamqqqoZREsRqZmZmZmaRLGpmZmZmZq0RKmqqqqqmhtEqZmZOZ
+    CaERGpmZlEQpoREVGqmURCmhERiqqZSEKaEREYqpmUKZoRERGKmZmZmhERERhmaqqqEREADwAAAA8AAAAPAAAADwAAAA8AAAADAAAAA
+    QAAAAAAAAAIAAAADwAAAA8AAAAPAAAADwAAgA8AAMAPAADgDwAA" rel="icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+      /* Custom CSS styles for the button */
+      .custom-btn {
+          font-size: 18px;
+          font-weight: bold;
+          border-radius: 30px;
+          padding: 12px 28px;
+          background-color: blue;
+      }
+
+      .custom-btn:hover {
+          background-color: #007bff;
+          color: #fff;
+      }
+  </style>
+</head>
+<body>
+
+    <header class = "header">
+        <nav class = "navbar navbar-expand-lg navbar-light bg-secondary">
+            <div class="container">
+                <a class = "navbar-brand fw-bold fs-2" href = "{% url 'index' %}" style="position: absolute;top:2%;left:2%;">
+                    <span>
+                        <i class = "fa-solid fa-file-invoice"></i>
+                    </span>
+                    <span class = "navbar-brand-text">RESUME</span> BUILDER
+                </a>
+                <button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse"
+                data-bs-target = "#navbarContent" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class = "collapse navbar-collapse" id = "navbarContent">
+                    
+
+                    <button type = "button" class = "btn btn-login btn-primary ms-lg-4 px-4 fs-18 mt-3 mt-lg-0" style="position: absolute;left:66%">
+                      <a href="{% url 'contact' %}">Contact Us</a></button>
+                      <button type = "button" class = "btn btn-login btn-primary ms-lg-4 px-4 fs-18 mt-3 mt-lg-0" style="position: absolute;left:77%">
+                        <a href="{% url 'login' %}">Log In</a></button>
+                        <button type = "button" class = "btn btn-login btn-primary ms-lg-4 px-4 fs-18 mt-3 mt-lg-0" style="position: absolute;left:88%;">
+                            <a href="{% url 'signup' %}">Sign Up</a></button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="hello" class="header-banner">
+            <div  class="container h-100 d-flex align-items-center justify-content-center">
+                <div class = "row text-center justify-content-center">
+                    <h1 class = "text-uppercase text-blue fw-6 lh-17 display-5">create your professional resume in <span
+                      class = "text-lowercase text-white" >minutes!</span></h1>
+                    <p class = "text-black text-bold fs-4 mt-3 mb-5">Easy to use. Time-saver. Professional.</p>
+                    <div class="text-center mt-4">
+                      <a href="{% url 'login' %}" class="btn btn-primary custom-btn">Select Template</a>
+                  </div>
+                       
+                </div>
+            </div>
+        </div>
+        <div class="section-one">
+            <div class="container">
+                <div class = "section-one-content">
+                    <div class="section-one-l">
+                        <img  style="position: absolute;top:115%;left:10%;"    src = "{% static 'images/visual-0c7080adf17f1f207276f613447c924f667dab34b7ac415cd7ef653172defd0b.svg' %}">
+                    </div>
+                    <div class = "section-one-r text-center" style="position: absolute;top:105%;left:50%;">
+                        <h2 class = "lg-title" style="color: black;font-weight: 60px;justify-content:center;">Use the best resume maker as your guide!</h2>
+                        <p class = "text">Getting that dream job can seem like an impossible task. We're here to change that. Give yourself a real advantage with the best online resume maker: created by experts, imporved by data, trusted by millions of professionals.</p>
+                        <div class = "btn-group">
+                            <a href = "#hello" class = "btn btn-primary text-uppercase" style="margin-right: 30px;">create my resume</a>
+                            <a href = "{% url 'video' %}" class = "btn btn-secondary text-uppercase">watch video</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <section style="background-color: aliceblue;position: absolute;top:180%;width: 100%;height:50%;"></section>
+        <div class="section-two bg-bright" style="position: absolute;top:170%;left:18%;">
+            <div class="container">
+              <div class="section-two-content">
+                <div class="section-items" style="align-content: center;">
+                  <div class="section-item" >
+                    <div class="section-item-icon">
+                      <img src="{% static 'images/feature-1-edf4481d69166ac81917d1e40e6597c8d61aa970ad44367ce78049bf830fbda5.svg' %}" alt="">
+                    </div>
+                    <h5 class="section-item-title">Make a resume that wins Interviews!</h5>
+                    <p class="text">Use our resume maker with its advanced creation tools to tell professional story that engages recruiters, hiring managers and even CEOs.</p>
+                  </div>
+                  <div class="section-item">
+                    <div class="section-item-icon">
+                      <img src="{% static 'images/feature-2-a7a471bd973c02a55d1b3f8aff578cd3c9a4c5ac4fc74423d94ecc04aef3492b.svg' %}" alt="">
+                    </div>
+                    <h5 class="section-item-title">Resume writing made easy!</h5>
+                    <p class="text">Resume writing has never been this effortless. Pre-generated text, visual designs and more - all already integrated into the resume maker. Just fill in your details.</p>
+                  </div>
+                  <div class="section-item">
+                    <div class="section-item-icon">
+                      <img src="{% static 'images/feature-3-4e87a82f83e260488c36f8105e26f439fdc3ee5009372bb5e12d9421f32eabdd.svg' %}" alt="">
+                    </div>
+                    <h5 class="section-item-title">A recruiter-tested CV maker tool</h5>
+                    <p class="text">Our resume builder and its pre-generated content are tested by recruiters and IT experts. We help your CV become truly competitive in the hiring process.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width,intial-scale=1.0" />
+      {% load static %}
+
+<!-- Rest of your HTML code -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+      <!--font-->
+      <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif&family=Nunito&display=swap"
+        rel="stylesheet"/>
+        <title>
+            CHAITANYA BHARATHI INSTITUTE OF TECHNOLOGY STUDENT PLACEMENT POTRAL COMPANIES
+          </title>
+    </head>
+    <body>
+        <h1 class="comp-h1">Notifications</h1>
+        <p class="welcome-text" style="position: absolute; top: 0%; left:90%; font-size: 30px">{{username}}</p> 
+        <!--job listing-->
+        <selection class="job-list" id="jobs">
+            <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="{% static 'images/tesla.svg' %}"  />
+                <div class="job-detail">
+                <h4>Tesla</h4>
+                <h3>Linux Software Engineering</h3>
+                <p>(Job Specification)</p>
+                </div>
+            </div>
+
+            <div class="job-posted">Posted 2 min ago</div>
+            </div>
+            <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="{% static 'images/google.svg' %}" />
+                <div class="job-detail">
+                <h4>Google</h4>
+                <h3>Web Developers</h3>
+                <p>(Job Specification)</p>
+                </div>
+            </div>
+
+            <div class="job-posted">Posted 2 min ago</div>
+            </div>
+
+            <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="{% static 'images/Amazon.svg' %}" />
+                <div class="job-detail">
+                <h4>Amazon</h4>
+                <h3>Full stack developer</h3>
+                <p>(Job Specification)</p>
+                </div>
+            </div>
+
+            <div class="job-posted">Posted 2 min ago</div>
+            </div>
+            <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="{% static 'images/bank-of-america.svg' %}" />
+                <div class="job-detail">
+                <h4>Bank of America</h4>
+                <h3>Market research analyst</h3>
+                <p>(Job Specification)</p>
+                </div>
+            </div>
+
+            <div class="job-posted">Posted 2 min ago</div>
+            </div>
+            <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="{% static 'images/sony.svg' %}" />
+                <div class="job-detail">
+                <h4>SONY</h4>
+                <h3>ELECTRONICS Engineering</h3>
+                <p>(Job Specification)</p>
+                </div>
+            </div>
+
+            <div class="job-posted">Posted 2 min ago</div>
+            </div>
+            <div class="job-card">
+            <div class="job-name">
+                <img class="job-profile" src="{% static 'images/reliance.svg' %}" />
+                <div class="job-detail">
+                <h4>Reliance</h4>
+                <h3>Mechanical Engineering</h3>
+                <p>(Job Specification)</p>
+                </div>
+            </div>
+
+            <div class="job-posted">Posted 2 min ago</div>
+            </div>
+            <section class="featured" id="companies">
+                <h1 class="section-title">Featured Companies</h1>
+                <p>
+                Explore your desired companies 
+                </p>
+                <div class="featured-wrapper">
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/apple-.svg' %}">
+                  
+                    <p><a class="tes" href="https://www.apple.com/careers/in/">Apple</a></p>
+                    <button class="featured -button">View 2 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/qualcomm.svg' %}">
+                    <p><a class="tes" href="https://www.qualcomm.com/company/careers">Qualcomm</a></p>
+                    <button class="featured -button">View 5 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/Dell.svg' %}">
+                    <p><a class="tes" href="https://jobs.dell.com/india-diversity">Dell</a></p>
+                    <button class="featured -button">View 3 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/google.svg' %}">
+                    <p><a class="tes" href="https://careers.google.com/">Google</a></p>
+                    <button class="featured -button">View 2 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/reliance.svg' %}">
+                    <p><a class="tes" href="https://careers.ril.com/rilcareers/">Reliance</a></p>
+                    <button class="featured -button">View 4 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/bank-of-america.svg' %}">
+                    <p><a class="tes" href="https://careers.bankofamerica.com/en-us/job-search">bank-of-america</a></p>
+                    <button class="featured -button">View 3 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/Amazon.svg' %}">
+                    <p><a class="tes" href="https://www.amazon.jobs/en/search-jobcategory">Amazon</a></p>
+                    <button class="featured -button">View 1 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/tesla.svg' %}">
+                    <p><a class="tes" href="https://www.tesla.com/careers">Tesla</a></p>
+                    <button class="featured -button">View 1 jobs</button>
+                </div>
+                <div class="featured-card">
+                  <img class="featured-image" src="{% static 'images/sony.svg' %}">
+                    <p><a class="tes" href="https://www.sonyjobs.com/">SONY</a></p>
+                    <button class="featured -button">View 6 jobs</button>
+                </div>
+                </div>
+            </section>
+        
+    </body> 
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% csrf_token %}
+    <meta charset="utf-8" />
+    <title>Template Select</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/tempsel.css' %}" />
+    <style>
+      .button {
+        background-color: red;
+        color: #fff;
+        padding: 7px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+      }
+      .template-image {
+        width: 450px;
+        height: 400px;
+        border: 5px solid #ccc;
+        transition: filter 0.5s ease;
+      }
+
+      .template-text {
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 10px;
+        border-radius: 5px;
+        transition: opacity 0.5s ease;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        background-image: url("https://media.istockphoto.com/id/1212342896/vector/abstract-hexagon-wallpaper-white-background-3d-vector-illustration.jpg?s=612x612&w=0&k=20&c=ynRzXUZ4_Ga3Y7joKBABdXUQI4xBvrdHJnYueJWEiw8=");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      a {
+        text-decoration: none;
+      }
+      .stunt {
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .welcome-text {
+        font-size: 40px;
+        position: relative;
+        top: 0%;
+        left: 70%;
+      }
+
+      button:hover {
+        background-color: rgb(24, 165, 216);
+      }
+      .a {
+        position: absolute;
+        top: 5%;
+        left: 74%;
+        font-size: 20px;
+        display: inline-block;
+        padding: 5px 7px 5px 7px;
+        background-color: rgb(28, 186, 244);
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .a:hover {
+        background-color: rgb(162, 221, 237);
+      }
+
+      .template-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 50px;
+      }
+
+      .template-item {
+        position: relative;
+      }
+
+      .template-item:hover .template-image {
+        filter: blur(5px);
+      }
+
+      .template-item:hover .template-text {
+        opacity: 1;
+      }
+
+      /* Position the dropdown content below the link */
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white; /* Set the background color for the dropdown */
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      /* Style the links inside the dropdown */
+      .dropdown-content a {
+        display: block;
+        color: black;
+        text-decoration: none;
+        padding: 10px 10px;
+      }
+
+      /* Change link color on hover */
+      .dropdown-content a:hover {
+        background-color: #6c8995;
+      }
+
+      /* Show the dropdown content when the container is hovered */
+      .dropdown-container.open .dropdown-content {
+        display: block;
+      }
+      .container {
+        position: relative;
+      }
+
+      .box {
+        background-color: #ffffff;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+    <script>
+      // Clear the browser history
+      function clearHistory() {
+        window.history.pushState({}, "", "");
+      }
+
+      // Call clearHistory function on logout
+      function logout() {
+        // Your logout logic here
+        clearHistory();
+        // Redirect the user to the login page or any other page after logout
+        window.location.href = '{% url "login" %}';
+      }
+      function toggleDropdown(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        const dropdownContainer = document.querySelector(".dropdown-container");
+        dropdownContainer.classList.toggle("open"); // Toggle the 'open' class on the container
+      }
+
+      // Close the dropdown when clicking outside of it
+      document.addEventListener("click", function (event) {
+        const dropdownContainer = document.querySelector(".dropdown-container");
+        if (!dropdownContainer.contains(event.target)) {
+          dropdownContainer.classList.remove("open");
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="stunt">
+      <p
+        class="welcome-text"
+        style="position: absolute; top: 0%; left: 83%; font-size: 30px"
+      >
+        Welcome {{username}}
+      </p>
+      <a
+        href="{% url 'logout' %}"
+        onclick="logout()"
+        class="button"
+        style="position: absolute; top: 12%; left: 90%"
+        >LOG OUT</a
+      >
+      <div class="dropdown-container">
+        <a
+          style="position: absolute; top: 12%; left: 82%; padding: 6.5px"
+          class="a"
+          href="#"
+          onclick="toggleDropdown(event)"
+          >SERVICES</a
+        >
+        <div
+          class="dropdown-content"
+          style="position: absolute; top: 12%; left: 76%"
+        >
+          <a href="{% url 'jobs' %}">Jobs</a>
+          <a href="{% url 'companies' %}">Listings</a>
+        </div>
+      </div>
+      <br />
+
+      <p
+        style="
+          font-size: 50px;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          position: relative;
+          top: -100px;
+        "
+      >
+        Select the Template for Resume
+      </p>
+      <div class="template-container">
+        <a href="{% url 'template1' %}">
+          <div class="template-item">
+            <img
+              class="template-image"
+              src="{% static 'images/resamp.jpg' %}"
+              alt=""
+            />
+            <div class="template-text">HR</div>
+          </div>
+        </a>
+        <a href="{% url 'template2' %}">
+          <div class="template-item">
+            <img
+              class="template-image"
+              src="{% static 'images/reddy.jpg' %}"
+              alt=""
+            />
+            <div class="template-text">Job Selector</div>
+          </div>
+        </a>
+        <a href="{% url 'formfinal' %}">
+          <div class="template-item">
+            <img
+              class="template-image"
+              src="{% static 'images/kal.png' %}"
+              alt=""
+            />
+            <div class="template-text">Job Seeker</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

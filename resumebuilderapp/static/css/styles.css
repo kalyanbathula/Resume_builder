@@ -1,0 +1,17 @@
+body{
+  margin: 0;
+  text-align: center;
+  background-color: #40E0D0;
+  font-size:20px;
+  width: 80%;
+  padding-left: 100px;
+}
+.top{
+  text-align: center;
+  background-size: cover;
+font-size:20px;
+
+}
+.mid{
+  text-align: center;
+}

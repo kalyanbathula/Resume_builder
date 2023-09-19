@@ -1,0 +1,19 @@
+<!-- view_entries.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Form Entries</title>
+  </head>
+  <body>
+    <h1>Contact Form Entries</h1>
+    <ul>
+      {% for entry in entries %}
+      <li>
+        {{ entry.name }} - {{ entry.email }} - {{ entry.phone }} - {{
+        entry.comments }}
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

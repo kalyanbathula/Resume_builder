@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/contact us.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .label-text {
+        color: rgb(252, 250, 250);
+      }
+
+      body,
+      html {
+        height: 100%;
+      }
+      h1 {
+        color: azure;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      .label-text {
+        color: black;
+      }
+      .form-control {
+        width: 100%;
+      }
+
+      .body {
+        background-color: rgba(0, 0, 0, 0.4);
+        font-weight: bold;
+        border: 3px solid #f8f3f3;
+        color: #141414;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .bg-image {
+        background-image: url("https://images.pexels.com/photos/1006122/pexels-photo-1006122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-filter: blur(8px);
+        filter: blur(2px);
+        height: 100%;
+        background-position: center;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        background-color: lightgray;
+      }
+
+      .textarea-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 10px;
+        height: 100px;
+      }
+
+      .error-message {
+        color: red;
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      .success-message {
+        color: green;
+        font-size: 30px;
+        margin-top: 30px;
+      }
+
+      #submit {
+        margin-top: 20px;
+        height: 50px;
+        background-color: green;
+        color: white;
+        font-style: bold;
+        border-radius: 5px;
+        font-size: 20px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      #reset {
+        margin-top: 20px;
+        height: 50px;
+        background-color: rgb(15, 15, 75);
+        color: white;
+        font-style: bold;
+        border-radius: 5px;
+        font-size: 20px;
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      #reset-link {
+        margin-top: 20px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+    <div class="body">
+      <h1>Contact Us</h1>
+      <form class="form-floating">
+        {% csrf_token %}
+        <input type="text" class="form-control" id="name" style="width: 100%" />
+        <label for="floatingInputValue">Name</label>
+        <div id="name-error" class="error-message"></div>
+      </form>
+      <br />
+      <form class="form-floating">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          style="width: 100%"
+        />
+        <label for="floatingInputValue">E-mail</label>
+        <div id="email-error" class="error-message"></div>
+      </form>
+      <br />
+      <form class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="phone"
+          style="width: 100%"
+        />
+        <label for="floatingInputValue">Number</label>
+        <div id="phone-error" class="error-message"></div>
+      </form>
+      <br />
+
+      <div class="form-floating">
+        <textarea
+          class="form-control"
+          id="comments"
+          style="height: 100px"
+        ></textarea>
+        <label for="floatingTextarea2">Comments</label>
+        <div id="comments-error" class="error-message"></div>
+      </div>
+      <input type="button" value="Submit" id="submit" onclick="validate()" />
+      <input type="button" value="Reset" id="reset" onclick="reset()" />
+
+      <div id="success-message" class="success-message"></div>
+      <a id="reset-link" href="{% url 'contact' %}" style="display: none"
+        >Fill Form Again</a
+      >
+      <br />
+      <div class="icon">
+        <a
+          href="https://www.facebook.com/"
+          class="icon-a"
+          style="margin-right: 350px"
+          ><i class="fa fa-facebook-square fa-4x"></i
+        ></a>
+        <a
+          href="https://www.instagram.com/"
+          class="icon-a"
+          style="margin-right: 340px"
+          ><i class="fa fa-instagram fa-4x"></i
+        ></a>
+        <a href="https://twitter.com/" class="icon-a" style="margin-left: 30px"
+          ><i class="fa fa-twitter fa-4x"></i
+        ></a>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      function displayError(elementId, errorMessage) {
+        var errorElement = $("#" + elementId);
+        if (errorMessage !== "") {
+          errorElement.html(errorMessage);
+          errorElement.show();
+        } else {
+          errorElement.html("");
+          errorElement.hide();
+        }
+      }
+
+      function validate() {
+        var nameInput = $("#name");
+        var emailInput = $("#email");
+        var phoneInput = $("#phone");
+        var commentsInput = $("#comments");
+
+        // Validate name
+        if (nameInput.val().trim() === "") {
+          displayError("name-error", "Please enter your name.");
+          return false;
+        } else {
+          displayError("name-error", "");
+        }
+
+        // Validate email
+        var emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!emailPattern.test(emailInput.val())) {
+          displayError("email-error", "Please enter a valid email address.");
+          return false;
+        } else {
+          displayError("email-error", "");
+        }
+
+        // Validate phone number
+        var phonePattern = /^\d{10}$/;
+        if (!phonePattern.test(phoneInput.val())) {
+          displayError(
+            "phone-error",
+            "Please enter a valid 10-digit phone number."
+          );
+          return false;
+        } else {
+          displayError("phone-error", "");
+        }
+
+        // Validate comments
+        if (commentsInput.val().trim() === "") {
+          displayError("comments-error", "Please enter the query.");
+          return false;
+        } else {
+          displayError("comments-error", "");
+        }
+        displaySuccessMessage("Success! Form submitted.");
+        document.getElementById("submit").disabled = true;
+        document.getElementById("reset").disabled = true;
+        document.getElementById("reset-link").style.display = "inline";
+
+        var formData = {
+          name: $("#name").val(),
+          email: $("#email").val(),
+          phone: $("#phone").val(),
+          comments: $("#comments").val(),
+          csrfmiddlewaretoken: $("input[name=csrfmiddlewaretoken]").val(),
+        };
+
+        $.ajax({
+          url: "/submit_form/", // Replace with your Django view URL
+          type: "POST",
+          data: formData,
+          dataType: "json",
+          success: function (response) {
+            // Handle success response, if needed
+            console.log(response);
+          },
+          error: function (error) {
+            // Handle error response, if needed
+            console.error(error);
+          },
+        });
+      }
+
+      function reset() {
+        $("#name").val("");
+        $("#email").val("");
+        $("#phone").val("");
+        $("#comments").val("");
+        displayError("name-error", "");
+        displayError("email-error", "");
+        displayError("phone-error", "");
+        displayError("comments-error", "");
+        displayError("form-error", "");
+        displaySuccessMessage("");
+        $("#submit").prop("disabled", false);
+        $("#reset").prop("disabled", false);
+        $("#reset-link").hide();
+      }
+
+      function displaySuccessMessage(message) {
+        $("#success-message").html(message);
+        $("#success-message").show();
+        $("#reset-link").show(); // Show the "Fill Form Again" link
+      }
+    </script>
+  </body>
+</html>

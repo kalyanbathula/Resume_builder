@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+    />
+    {% load static %}
+    <style>
+      /* ... (CSS styles from the previous code) ... */
+      body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        h1{
+            color: aqua;
+            font-size: 40px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #0d09e6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .btn {
+            text-align: center;
+        }
+
+        .btn button {
+            padding: 12px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .output {
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .output h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .output p {
+            white-space: pre-line;
+            color: #333;
+        }
+    </style>
+    <title>Resume Builder</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Resume Builder</h1>
+      <form class="input-fields">
+        <!-- Input fields for name, title, work experience, academics, etc. -->
+        <!-- ... (input fields from the previous code) ... -->
+        <form class="input-fields">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="title">Title (e.g., Web Developer)</label>
+                <input type="text" name="title" placeholder="Enter your job title">
+            </div>
+            <div class="form-group">
+                <label for="workexp">Work Experience</label>
+                <textarea name="workexp" placeholder="Enter your work experience"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="academics">Academic Details</label>
+                <textarea name="academics" placeholder="Enter your academic details"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="objective">Objective</label>
+                <input name="objective" placeholder="Enter your career objective">
+            </div>
+            <div class="form-group">
+                <label for="skills">Skills</label>
+                <textarea name="skills" placeholder="Enter your skills"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="projects">Projects</label>
+                <textarea name="projects" placeholder="Enter your projects"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="achievements">Achievements</label>
+                <textarea name="achievements" placeholder="Enter your achievements"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <textarea name="contact" placeholder="Enter your contact details"></textarea>
+            </div>
+        
+      </form>
+
+      <div class="btn">
+        <button onclick="toggle()">Preview or Edit</button>
+      </div>
+    </div>
+    
+    <div class="output">
+        <h2>Preview</h2>
+        <div id="preview-content"></div>
+    </div>
+
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.1.0/classic/ckeditor.js"></script>
+    <script  src="{% static 'js/app.js' %}"></script>
+  </body>
+</html>
